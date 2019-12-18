@@ -1,32 +1,31 @@
 package com.infy.telstraassignment_1.mvp.canadaslist;
 
 import com.infy.telstraassignment_1.model.Canada;
+import com.infy.telstraassignment_1.model.CanadaModel;
+import com.infy.telstraassignment_1.roomdb.RoomEntity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface CanadasListContract {
-    // implemented by CanadasListActivity to provide concrete implementation
-    interface View {
-        void showProgress(); // display progress bar
 
-        void hideProgress(); // hide progress bar
 
-        void showCanadaList(List<Canada> canadaList); // receive response to display
+    void getCanadaListFromLocal() throws Throwable;
 
-        void showLoadingError(String errMsg); // display error
-    }
+    void setList(List<RoomEntity> roomEntityList) throws Throwable;
 
-    // implemented by CanadasPresenter to handle user event
-    interface Presenter{
-        void loadCanadaList();
+    void clearLocalDb(List<RoomEntity> roomEntityList) throws Throwable;
 
-        void dropView();
-    }
+    boolean checkIntentConnection();
 
-    // implemented by CanadaPresenter to receive response from asynchronous processes
-    interface OnResponseCallback{
-        void onResponse(List<Canada> canadaList);
+    void setActionBarTitle(String title);
 
-        void onError(String errMsg);
-    }
+    void setList(ArrayList<Canada> rowArrayList);
+
+    void showLoading();
+
+    void hideRefreshing();
+
+    void showToast(String message) throws Throwable;
 }
+

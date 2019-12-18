@@ -1,6 +1,6 @@
 package com.infy.telstraassignment_1.general;
 
-public interface IAppConstants {
+public interface AppConstants {
 
     String domain = "https://dl.dropboxusercontent.com/";
 }

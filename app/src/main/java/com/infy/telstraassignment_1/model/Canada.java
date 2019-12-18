@@ -1,30 +1,19 @@
 package com.infy.telstraassignment_1.model;
 
-import java.util.Date;
+import com.google.gson.annotations.SerializedName;
+
+import com.google.gson.annotations.Expose;
 
 public class Canada {
 
+    @SerializedName("title")
     private String title;
+
+    @SerializedName("description")
     private String description;
-//    private String imageHref;
 
-
-
-
-    /**
-     *
-     * @param title
-     * @param description
-//     * @param imageHref
-     */
-    public Canada( String title, String description) {
-
-        this.title = title;
-        this.description = description;
-//        this.imageHref = imageHref;
-
-    }
-
+    @SerializedName("imageHref")
+    private String imageHref;
 
 
     public String getTitle() {
@@ -43,23 +32,17 @@ public class Canada {
         this.description = description;
     }
 
-//    public String getImageHref() {
-//        return imageHref;
-//    }
-//
-//    public void setImageHref(String imageHref) {
-//        this.imageHref = imageHref;
-//    }
 
-
-
-
-
-
-
-    @Override
-    public String toString() {
-        return "Title : '" + title + '\''+" Description : '" + description + '\'';
+    public String getImageHref() {
+        return imageHref;
     }
+
+    public void setImageHref(String imageHref) {
+        this.imageHref = imageHref;
+    }
+
+
+
+
 }
 
